@@ -32,7 +32,7 @@ const getAnswer = async (e) => {
     setAnswer(""); // Clear previous answer
 
     try {
-      const res = await axios.post('http://localhost:5000/chat', question)
+      const res = await axios.post('https://note-app-backend-igxr.onrender.com/chat', question)
 
       question.message = "";
       setAnswer(res.data.response)
@@ -48,7 +48,7 @@ const getAnswer = async (e) => {
   const mynotes = async (e) => {
     //   e.preventDefault();
     try {
-      const res = await axios.get("http://localhost:5000/api/getnote", {
+      const res = await axios.get("https://note-app-backend-igxr.onrender.com/api/getnote", {
         withCredentials: true,
       });
       console.log(res.data);
@@ -70,7 +70,7 @@ const getAnswer = async (e) => {
   const [logoutmessage, setLogoutmessage] = useState("");
   const handleLogout = async () => {
     try {
-      const res = await axios.post("http://localhost:5000/api/logout");
+      const res = await axios.post("https://note-app-backend-igxr.onrender.com/api/logout");
       redirectLogin();
       setLogoutmessage("Logged out!!!");
     } catch (error) {

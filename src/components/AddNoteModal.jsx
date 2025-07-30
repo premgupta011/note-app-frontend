@@ -24,7 +24,7 @@ const AddNoteModal = ({ onClose, onNoteAdded,refreshMynote }) => {
 
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/addnote",
+        "https://note-app-backend-igxr.onrender.com/api/addnote",
         { title, description },
         { withCredentials: true }
       );

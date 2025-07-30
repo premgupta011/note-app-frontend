@@ -31,7 +31,7 @@ const LoginPage = () => {
       }
 
       const response = await axios.post(
-        "http://localhost:5000/api/login",
+        "https://note-app-backend-igxr.onrender.com/api/login",
         data,
         { withCredentials: true }
       );

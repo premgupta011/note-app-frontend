@@ -17,7 +17,7 @@ const Card = (props) => {
 
   const handleDelete = async (noteId) => {
     try {
-      await axios.delete(`http://localhost:5000/api/deleteNote/${noteId}`, {
+      await axios.delete(`https://note-app-backend-igxr.onrender.com/api/deleteNote/${noteId}`, {
         withCredentials: true,
       });
       props.refresh();
@@ -30,7 +30,7 @@ const Card = (props) => {
   const handleSave = async () => {
     try {
       await axios.put(
-        `http://localhost:5000/api/editnote/${editableNote._id}`,
+        `https://note-app-backend-igxr.onrender.com/api/editnote/${editableNote._id}`,
         {
           title: editableNote.title,
           description: editableNote.description,
