@@ -32,7 +32,8 @@ const getAnswer = async (e) => {
     setAnswer(""); // Clear previous answer
 
     try {
-      const res = await axios.post('https://note-app-backend-igxr.onrender.com/chat', question)
+      const res = await axios.post('https://note-app-backend-igxr.onrender.com/chat', question, 
+        { withCredentials: true })
 
       question.message = "";
       setAnswer(res.data.response)
@@ -70,7 +71,7 @@ const getAnswer = async (e) => {
   const [logoutmessage, setLogoutmessage] = useState("");
   const handleLogout = async () => {
     try {
-      const res = await axios.post("https://note-app-backend-igxr.onrender.com/api/logout");
+      const res = await axios.post("https://note-app-backend-igxr.onrender.com/api/logout",{ withCredentials: true});
       redirectLogin();
       setLogoutmessage("Logged out!!!");
     } catch (error) {

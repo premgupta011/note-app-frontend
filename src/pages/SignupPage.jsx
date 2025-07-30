@@ -23,7 +23,8 @@ const handleChange = (e) => {
 const handleSubmit = async (e)=>{
   e.preventDefault();
   try{
-    const response = await axios.post('https://note-app-backend-igxr.onrender.com/api/signup', data)
+    const response = await axios.post('https://note-app-backend-igxr.onrender.com/api/signup', data,
+        { withCredentials: true })
     redirectHomePage()
   }catch(error){
     // alert("error occured")

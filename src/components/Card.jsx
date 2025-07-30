@@ -31,11 +31,11 @@ const Card = (props) => {
     try {
       await axios.put(
         `https://note-app-backend-igxr.onrender.com/api/editnote/${editableNote._id}`,
+        { withCredentials: true },
         {
           title: editableNote.title,
           description: editableNote.description,
-        },
-        { withCredentials: true }
+        }
       );
       props.refresh();
       handleCollapse();
