@@ -13,7 +13,7 @@ const HomePage = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const [noteMessage, setNoteMessage] = useState({ message: "", data: {} });
-  const { username } = location.state || {};
+  const [username, setUsername] = useState("")
   const [loading, setLoading] = useState(false);
   const redirectLogin = () => {
     navigate("/");
@@ -35,7 +35,7 @@ useEffect(() => {
       
 
 
-if (res.data?.success) {
+if (res.data.user?.id ) {
         setIsAuthenticated(true);
       } else {
         setIsAuthenticated(false);
