@@ -95,9 +95,9 @@ const getAnswer = async (e) => {
     }
   };
   useEffect(() => {
-  if (isAuthenticated) {
+ 
     mynotes();
-  }
+  
 }, [isAuthenticated]);
   const [logoutmessage, setLogoutmessage] = useState("");
   const handleLogout = async () => {
