@@ -98,7 +98,7 @@ const getAnswer = async (e) => {
  
     mynotes();
   
-}, [isAuthenticated]);
+}, []);
   const [logoutmessage, setLogoutmessage] = useState("");
   const handleLogout = async () => {
     try {
