@@ -25,22 +25,22 @@ const handleQuestionChange = (e)=>{
   setQuestion((prev)=>({...prev, message: e.target.value}));
   console.log(question.message)
 }
-useEffect(() => {
-  const checkAuth = async () => {
-    try {
-      const res = await axios.get("https://note-app-backend-igxr.onrender.com/api/auth-check", {
-        withCredentials: true,
-      });
+// useEffect(() => {
+//   const checkAuth = async () => {
+//     try {
+//       const res = await axios.get("https://note-app-backend-igxr.onrender.com/api/auth-check", {
+//         withCredentials: true,
+//       });
       
       
 
 
-// if (res.data?. success ) {
-//         setIsAuthenticated(true);
-//       } else {
-//         setIsAuthenticated(false);
-//         redirectLogin();
-//       }
+// // if (res.data?. success ) {
+// //         setIsAuthenticated(true);
+// //       } else {
+// //         setIsAuthenticated(false);
+// //         redirectLogin();
+// //       }
 
 
 
@@ -49,12 +49,12 @@ useEffect(() => {
 
 
       
-    } catch (error) {
-      setIsAuthenticated(false); // not logged in
-    }
-  };
-  checkAuth();
-}, []);
+//     } catch (error) {
+//       setIsAuthenticated(false); // not logged in
+//     }
+//   };
+//   checkAuth();
+// }, []);
 const getAnswer = async (e) => {
     e.preventDefault();
     setLoading(true);
