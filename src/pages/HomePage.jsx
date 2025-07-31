@@ -18,14 +18,26 @@ const HomePage = () => {
   const redirectLogin = () => {
     navigate("/");
   };
-
+const [isAuthenticated, setIsAuthenticated] = useState(false);
  const [question, setQuestion] = useState({message: ""});
 const [answer, setAnswer] = useState("")
 const handleQuestionChange = (e)=>{
   setQuestion((prev)=>({...prev, message: e.target.value}));
   console.log(question.message)
 }
-
+useEffect(() => {
+  const checkAuth = async () => {
+    try {
+      const res = await axios.get("https://note-app-backend-igxr.onrender.com/api/auth-check", {
+        withCredentials: true,
+      });
+      setIsAuthenticated(true); // now user is authenticated
+    } catch (error) {
+      setIsAuthenticated(false); // not logged in
+    }
+  };
+  checkAuth();
+}, []);
 const getAnswer = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -66,8 +78,10 @@ const getAnswer = async (e) => {
     }
   };
   useEffect(() => {
+  if (isAuthenticated) {
     mynotes();
-  }, []);
+  }
+}, [isAuthenticated]);
   const [logoutmessage, setLogoutmessage] = useState("");
   const handleLogout = async () => {
     try {
