@@ -35,12 +35,12 @@ useEffect(() => {
       
 
 
-if (res.data.user?.id ) {
-        setIsAuthenticated(true);
-      } else {
-        setIsAuthenticated(false);
-        redirectLogin();
-      }
+// if (res.data?. success ) {
+//         setIsAuthenticated(true);
+//       } else {
+//         setIsAuthenticated(false);
+//         redirectLogin();
+//       }
 
 
 
