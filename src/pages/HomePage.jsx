@@ -31,7 +31,24 @@ useEffect(() => {
       const res = await axios.get("https://note-app-backend-igxr.onrender.com/api/auth-check", {
         withCredentials: true,
       });
-      setIsAuthenticated(true); // now user is authenticated
+      
+      
+
+
+if (res.data?.success) {
+        setIsAuthenticated(true);
+      } else {
+        setIsAuthenticated(false);
+        redirectLogin();
+      }
+
+
+
+
+
+
+
+      
     } catch (error) {
       setIsAuthenticated(false); // not logged in
     }
